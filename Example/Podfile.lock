@@ -1,0 +1,16 @@
+PODS:
+  - TEPhotoDisplayView (0.0.1)
+
+DEPENDENCIES:
+  - TEPhotoDisplayView (from `../`)
+
+EXTERNAL SOURCES:
+  TEPhotoDisplayView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  TEPhotoDisplayView: 60c4d27bec55705dce54a938621dd928889efb08
+
+PODFILE CHECKSUM: c92c3a2a53d279e5449ab40a6f6456854251a774
+
+COCOAPODS: 1.5.3

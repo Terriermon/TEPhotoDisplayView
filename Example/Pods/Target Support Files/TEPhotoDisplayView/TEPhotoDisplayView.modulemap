@@ -1,0 +1,6 @@
+framework module TEPhotoDisplayView {
+  umbrella header "TEPhotoDisplayView-umbrella.h"
+
+  export *
+  module * { export * }
+}
