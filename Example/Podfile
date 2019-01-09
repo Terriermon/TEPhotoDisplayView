@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'TEPhotoDisplayView_Example' do
+  pod 'TEPhotoDisplayView', :path => '../'
+
+  target 'TEPhotoDisplayView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
