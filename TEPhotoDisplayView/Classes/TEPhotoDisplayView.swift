@@ -22,6 +22,7 @@ public protocol TEPhotoDisplayViewDelegate: class {
 extension TEPhotoDisplayViewDelegate {
     func photoDisplayView(_ photoDisplayView: TEPhotoDisplayView, didSelectItemAt index: Int) {}
     func photoDisplayViewAddButtonClicked(_ photoDisplayView: TEPhotoDisplayView) {}
+    func photoDisplayView(_ photoDisplayView: TEPhotoDisplayView, didDeleteItemAt index: Int) {}
     func photoDisplayViewPhotosCountAboveMaxCount(_ photoDisplayView: TEPhotoDisplayView) {}
 }
 
