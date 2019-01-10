@@ -156,7 +156,7 @@ extension TEPhotoDisplayView: UICollectionViewDataSource {
             cell.deleteButton.isHidden = true
             cell.imageView.image = self.cameraImage
         } else {
-            cell.deleteButton.isHidden = false
+            cell.deleteButton.isHidden = onlyShow
             cell.imageView.image = photos[indexPath.row]
             
             cell.delete { [unowned self] image in
