@@ -33,16 +33,6 @@ extension TEPhotoDisplayViewDelegate {
 
 open class TEPhotoDisplayView: UIView {
     
-    private var flowLayout: UICollectionViewFlowLayout {
-        let layout = UICollectionViewFlowLayout()
-        let length = (self.bounds.width - CGFloat(Default.col + 1) * Default.margin) / CGFloat(Default.col)
-        layout.itemSize = CGSize(width: length, height: length)
-        layout.minimumLineSpacing = Default.margin
-        layout.minimumInteritemSpacing = Default.margin
-        layout.sectionInset = UIEdgeInsets(top: Default.margin, left: Default.margin, bottom: 0, right: Default.margin)
-        return layout
-    }
-    
     open var photos = [UIImage?]() {
         didSet {
             if photos.count > maxCount {
@@ -75,7 +65,7 @@ open class TEPhotoDisplayView: UIView {
     public var maxCount: Int = Int.max
     
     private lazy var  collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = .white
         collectionView.register(TEPhotoDisplayCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.delegate = self
@@ -97,12 +87,10 @@ open class TEPhotoDisplayView: UIView {
         self.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.setNeedsUpdateConstraints()
-//        self.invalidateIntrinsicContentSize()
     }
     
     override open func layoutSubviews() {
         super.layoutSubviews()
-        collectionView.setCollectionViewLayout(flowLayout, animated: true)
         self.invalidateIntrinsicContentSize()
     }
     
@@ -121,10 +109,10 @@ open class TEPhotoDisplayView: UIView {
     open override var intrinsicContentSize: CGSize {
         let length = (self.bounds.width - CGFloat(Default.col + 1) * Default.margin) / CGFloat(Default.col)
         var height: CGFloat = 0
-        
+
         /// 如果行数不能被整除，就说明还有下一行，行数需要+1
         var addOneRow: Bool = false
-        
+
         if onlyShow {
             addOneRow = (photos.count % Default.col) != 0
             height = length * CGFloat((photos.count / Default.col) + (addOneRow ? 1:0))
@@ -183,6 +171,25 @@ extension TEPhotoDisplayView: UICollectionViewDelegate {
         } else {
             delegate.photoDisplayView(self, didSelectItemAt: indexPath.row)
         }
+    }
+}
+
+extension TEPhotoDisplayView: UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let length = (self.bounds.width - CGFloat(Default.col + 1) * Default.margin) / CGFloat(Default.col)
+        return CGSize(width: length, height: length)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return Default.margin
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return Default.margin
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: Default.margin, left: Default.margin, bottom: 0, right: Default.margin)
     }
 }
 
