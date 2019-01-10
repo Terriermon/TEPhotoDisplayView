@@ -34,11 +34,11 @@ open class TEPhotoDisplayView: UIView {
     
     private var flowLayout: UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
-        let length = (self.bounds.width - (Default.col + 1) * Default.margin) / Default.col
+        let length = (self.bounds.width - CGFloat(Default.col + 1) * Default.margin) / CGFloat(Default.col)
         layout.itemSize = CGSize(width: length, height: length)
         layout.minimumLineSpacing = Default.margin
         layout.minimumInteritemSpacing = Default.margin
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        layout.sectionInset = UIEdgeInsets(top: Default.margin, left: Default.margin, bottom: 0, right: Default.margin)
         return layout
     }
     
@@ -49,11 +49,13 @@ open class TEPhotoDisplayView: UIView {
                 if let delegate = self.delegate {
                     delegate.photoDisplayViewPhotosCountAboveMaxCount(self)
                 }
-            } else {
-                collectionView.reloadData()
             }
+            collectionView.reloadData()
+            self.invalidateIntrinsicContentSize()
         }
     }
+    
+    open var onlyShow = false
     
     public weak var delegate: TEPhotoDisplayViewDelegate?
     
@@ -85,11 +87,13 @@ open class TEPhotoDisplayView: UIView {
         self.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.setNeedsUpdateConstraints()
+//        self.invalidateIntrinsicContentSize()
     }
     
     override open func layoutSubviews() {
         super.layoutSubviews()
         collectionView.setCollectionViewLayout(flowLayout, animated: true)
+        self.invalidateIntrinsicContentSize()
     }
     
     override open func updateConstraints() {
@@ -104,6 +108,24 @@ open class TEPhotoDisplayView: UIView {
         super.updateConstraints()
     }
     
+    open override var intrinsicContentSize: CGSize {
+        let length = (self.bounds.width - CGFloat(Default.col + 1) * Default.margin) / CGFloat(Default.col)
+        var height: CGFloat = 0
+        
+        /// 如果行数不能被整除，就说明还有下一行，行数需要+1
+        var addOneRow: Bool = false
+        
+        if onlyShow {
+            addOneRow = (photos.count % Default.col) != 0
+            height = length * CGFloat((photos.count / Default.col) + (addOneRow ? 1:0))
+        } else {
+            addOneRow = ((photos.count + 1) % Default.col) != 0
+            height = (length + Default.margin) * CGFloat(((photos.count + 1) / Default.col) + (addOneRow ? 1:0)) +  Default.margin
+        }
+        
+        return CGSize(width: UIView.noIntrinsicMetric, height: height)
+    }
+    
 }
 
 extension TEPhotoDisplayView: UICollectionViewDataSource {
@@ -114,12 +136,16 @@ extension TEPhotoDisplayView: UICollectionViewDataSource {
             return maxCount
         }
         
+        if onlyShow {
+            return photos.count
+        }
+        
         return photos.count + 1
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TEPhotoDisplayCell
-        if indexPath.row == self.photos.count, indexPath.row < maxCount {
+        if indexPath.row == self.photos.count, indexPath.row < maxCount, !onlyShow {
             cell.deleteButton.isHidden = true
             cell.imageView.image = self.cameraImage
         } else {
@@ -142,7 +168,7 @@ extension TEPhotoDisplayView: UICollectionViewDelegate {
         
         guard let delegate = self.delegate else { return }
         
-        if indexPath.row == self.photos.count {
+        if indexPath.row == self.photos.count, !onlyShow {
             delegate.photoDisplayViewAddButtonClicked(self)
         } else {
             delegate.photoDisplayView(self, didSelectItemAt: indexPath.row)
@@ -153,7 +179,7 @@ extension TEPhotoDisplayView: UICollectionViewDelegate {
 extension TEPhotoDisplayView {
     private struct Default {
         static let margin: CGFloat = 10
-        static let col: CGFloat = 3
+        static let col: Int = 3
     }
     
     private var cameraImage: UIImage? {
