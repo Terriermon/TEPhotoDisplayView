@@ -43,7 +43,7 @@ open class TEPhotoDisplayView: UIView {
         return layout
     }
     
-    open var photos = [UIImage]() {
+    open var photos = [UIImage?]() {
         didSet {
             if photos.count > maxCount {
                 photos = photos.prefix(maxCount).map { $0 }
@@ -57,6 +57,8 @@ open class TEPhotoDisplayView: UIView {
     }
     
     open var onlyShow = false
+    
+    open var placeholderImage: UIImage?
     
     open override var backgroundColor: UIColor? {
         didSet {
@@ -158,7 +160,7 @@ extension TEPhotoDisplayView: UICollectionViewDataSource {
             cell.imageView.image = self.cameraImage
         } else {
             cell.deleteButton.isHidden = onlyShow
-            cell.imageView.image = photos[indexPath.row]
+            cell.imageView.image = photos[indexPath.row] ?? self.placeholderImage
             
             cell.delete { [unowned self] image in
 //                self.photos.remove(at: indexPath.row)
