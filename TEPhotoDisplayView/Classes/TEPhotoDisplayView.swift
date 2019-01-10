@@ -30,7 +30,6 @@ extension TEPhotoDisplayViewDelegate {
 //
 //}
 
-
 open class TEPhotoDisplayView: UIView {
     
     open var photos = [UIImage?]() {
@@ -41,8 +40,9 @@ open class TEPhotoDisplayView: UIView {
                     delegate.photoDisplayViewPhotosCountAboveMaxCount(self)
                 }
             }
-            collectionView.reloadData()
+            
             self.invalidateIntrinsicContentSize()
+            collectionView.reloadData()
         }
     }
     
@@ -91,11 +91,10 @@ open class TEPhotoDisplayView: UIView {
     
     override open func layoutSubviews() {
         super.layoutSubviews()
-        self.invalidateIntrinsicContentSize()
     }
     
     override open func updateConstraints() {
-        
+
         let collectionConstrains = [
             collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             collectionView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -107,7 +106,10 @@ open class TEPhotoDisplayView: UIView {
     }
     
     open override var intrinsicContentSize: CGSize {
-        let length = (self.bounds.width - CGFloat(Default.col + 1) * Default.margin) / CGFloat(Default.col)
+//        let length = (self.bounds.width - CGFloat(Default.col + 1) * Default.margin) / CGFloat(Default.col)
+//        let length = (UIScreen.main.bounds.width - CGFloat(Default.col + 1) * Default.margin) / CGFloat(Default.col)
+        //FIXME: - 这里有bug，宽度默认是屏幕宽度，需要找一个方法，实现这里的宽度为视图布局完成后的宽度
+        let length = (self.bounds.width > 0 ? self.bounds.width : UIScreen.main.bounds.width - CGFloat(Default.col + 1) * Default.margin) / CGFloat(Default.col)
         var height: CGFloat = 0
 
         /// 如果行数不能被整除，就说明还有下一行，行数需要+1
@@ -118,12 +120,11 @@ open class TEPhotoDisplayView: UIView {
             height = length * CGFloat((photos.count / Default.col) + (addOneRow ? 1:0))
         } else {
             addOneRow = ((photos.count + 1) % Default.col) != 0
-            height = (length + Default.margin) * CGFloat(((photos.count + 1) / Default.col) + (addOneRow ? 1:0)) +  Default.margin
+//            height = (length + Default.margin) * CGFloat(((photos.count + 1) / Default.col) + (addOneRow ? 1:0)) +  Default.margin
+            height = (length) * CGFloat(((photos.count + 1) / Default.col) + (addOneRow ? 1:0)) +  Default.margin
         }
-        
         return CGSize(width: UIView.noIntrinsicMetric, height: height)
     }
-    
 }
 
 extension TEPhotoDisplayView: UICollectionViewDataSource {

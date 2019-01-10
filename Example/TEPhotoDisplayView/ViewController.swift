@@ -11,25 +11,18 @@ import TEPhotoDisplayView
 
 class ViewController: UIViewController {
 
-    var displayView: TEPhotoDisplayView?
+    lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: UIScreen.main.bounds, style: .plain)
+        tableView.dataSource = self
+        tableView.register(PhotoTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.tableFooterView = UIView()
+        return tableView
+    }()
+    
     var photos = [UIImage]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        displayView = TEPhotoDisplayView()
-        displayView?.backgroundColor = .lightGray
-        displayView?.delegate = self
-        view.addSubview(displayView!)
-        displayView?.translatesAutoresizingMaskIntoConstraints = false
-        
-        let displayConstrains = [
-            displayView!.leftAnchor.constraint(equalTo: view.leftAnchor),
-            displayView!.rightAnchor.constraint(equalTo: view.rightAnchor),
-//            displayView!.topAnchor.constraint(equalTo: view.topAnchor),
-            displayView!.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
-            displayView!.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor)
-//            displayView!.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-            ]
-        NSLayoutConstraint.activate(displayConstrains)
+        view.addSubview(tableView)
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,40 +32,63 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: TEPhotoDisplayViewDelegate {
-    /// 选中某张图片
-    func photoDisplayView(_ photoDisplayView: TEPhotoDisplayView, didSelectItemAt index: Int) {
-        
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
-    /// 点击删除按钮
-    func photoDisplayView(_ photoDisplayView: TEPhotoDisplayView, didDeleteItemAt index: Int) {
-        self.photos.remove(at: index)
-        photoDisplayView.photos = self.photos
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PhotoTableViewCell
+        cell.photos = self.photos
+        cell.addPhoto = {
+            self.uploadImages()
+        }
+        cell.deletePhoto = { (index) in
+            self.photos.remove(at: index)
+            cell.photos = self.photos
+            self.tableView.reloadData()
+        }
+        return cell
     }
-    /// 点击添加图片按钮
-    func photoDisplayViewAddButtonClicked(_ photoDisplayView: TEPhotoDisplayView) {
-        uploadImages()
-    }
-    /// 添加的图片超过设置的最大图片数量
-    func photoDisplayViewPhotosCountAboveMaxCount(_ photoDisplayView: TEPhotoDisplayView) {
-        print(self.photos)
-    }
+    
+    
 }
 
+//extension ViewController: TEPhotoDisplayViewDelegate {
+//    /// 选中某张图片
+//    func photoDisplayView(_ photoDisplayView: TEPhotoDisplayView, didSelectItemAt index: Int) {
+//
+//    }
+//    /// 点击删除按钮
+//    func photoDisplayView(_ photoDisplayView: TEPhotoDisplayView, didDeleteItemAt index: Int) {
+//        self.photos.remove(at: index)
+//        photoDisplayView.photos = self.photos
+//    }
+//    /// 点击添加图片按钮
+//    func photoDisplayViewAddButtonClicked(_ photoDisplayView: TEPhotoDisplayView) {
+//        uploadImages()
+//    }
+//    /// 添加的图片超过设置的最大图片数量
+//    func photoDisplayViewPhotosCountAboveMaxCount(_ photoDisplayView: TEPhotoDisplayView) {
+//        print(self.photos)
+//    }
+//}
+
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
+
     func uploadImages() {
         let pickerVC = UIImagePickerController()
         pickerVC.delegate = self as UIImagePickerControllerDelegate & UINavigationControllerDelegate
         self.present(pickerVC, animated: true, completion: nil)
     }
 
-    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         picker.dismiss(animated: true, completion: nil)
         let image  = info[.originalImage] as! UIImage
         self.photos.append(image)
-        self.displayView?.photos = self.photos
+        self.tableView.reloadData()
+//        self.displayView?.photos = self.photos
     }
 }
 
