@@ -23,8 +23,8 @@ class PhotoTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        displayView = TEPhotoDisplayView()
+        let length = CGFloat(UIScreen.main.bounds.width - 2 * 40 - 4 * 10) / 3
+        displayView = TEPhotoDisplayView(frame: .zero, itemSize: CGSize(width: length, height: length))
         displayView?.backgroundColor = .lightGray
         displayView?.delegate = self
         contentView.addSubview(displayView!)
@@ -35,7 +35,6 @@ class PhotoTableViewCell: UITableViewCell {
             displayView!.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -40),
             displayView!.topAnchor.constraint(equalTo: contentView.topAnchor),
             displayView!.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-            //            displayView!.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ]
         NSLayoutConstraint.activate(displayConstrains)
     }

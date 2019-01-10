@@ -1,5 +1,5 @@
 PODS:
-  - TEPhotoDisplayView (0.0.1)
+  - TEPhotoDisplayView (0.0.2)
 
 DEPENDENCIES:
   - TEPhotoDisplayView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TEPhotoDisplayView: 60c4d27bec55705dce54a938621dd928889efb08
+  TEPhotoDisplayView: df6479bc0152cca89db3f621d8e0d6bdfd0adcc6
 
 PODFILE CHECKSUM: c92c3a2a53d279e5449ab40a6f6456854251a774
 

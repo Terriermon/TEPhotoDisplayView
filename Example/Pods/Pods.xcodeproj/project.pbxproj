@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1115001CC4948CBD4DA556E798603A17 /* TEPhotoDisplayView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C26101F02D784A083AC6D8FAB52155C2 /* TEPhotoDisplayView-dummy.m */; };
 		2DBE7596B3ACF90CAFB2A8F993764B13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		2ECB7196CDE7924308605229811CA7B0 /* TEPhotoDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CF864ED1053022DC2E2E0A81C8BAA3 /* TEPhotoDisplayView.swift */; };
+		4671116FEDC2191A065822E5B9F987EC /* TEPhotoDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED66B19900305958BC9BAE8E267D5480 /* TEPhotoDisplayView.swift */; };
 		495D9EC7C4CE549E41E7AB9413226805 /* TEPhotoDisplayView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6A1738C9B76D995FED5B5D559653C429 /* TEPhotoDisplayView.bundle */; };
-		5423C8E3884369708DDC324CDD51CD08 /* camera_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F2858BA35DA5049D68E91D367DD8FEE /* camera_icon@3x.png */; };
-		56C09FA662EAA8B6EA1B12E28F5A2DE3 /* close_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AE9C4DCB0F12D09C31F64BE2F0F8F05 /* close_icon@3x.png */; };
+		4FD0885CE2181F8458CA8356A642EFAD /* TEPhotoDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A66FE6AC857812B4AB7EF4320344EEF /* TEPhotoDisplayCell.swift */; };
+		5423C8E3884369708DDC324CDD51CD08 /* camera_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 20966DEC92607ECD2D204AF2326233FB /* camera_icon@3x.png */; };
+		56C09FA662EAA8B6EA1B12E28F5A2DE3 /* close_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CADD7E1975826D6CAB1558CF32B12703 /* close_icon@3x.png */; };
 		679AB46E3D83AA0F7F475004BAD22864 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		7B17016004C3D0043A2065DEFE84C19B /* TEPhotoDisplayView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A26D56504C2617EEE5676F83405E6A9 /* TEPhotoDisplayView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7B17016004C3D0043A2065DEFE84C19B /* TEPhotoDisplayView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B3DBED724E4F4899E45CEEAF4F7D592 /* TEPhotoDisplayView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CD99C3F1C7EC14E5E5C2402156C9F0B /* Pods-TEPhotoDisplayView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8362C8C51F22B0F7826DC999F50FBF /* Pods-TEPhotoDisplayView_Example-dummy.m */; };
-		90594550B0E14ED2E2650A4D3A200312 /* close_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C2C2CB09E4CC7A4798CD6CDD8849DDAE /* close_icon@2x.png */; };
-		A3D6FF08160D46B35F3A9CD801648F22 /* camera_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F83EC040666618DCD0BF6CEC6812E8F /* camera_icon@2x.png */; };
-		BB8BDE7227077A0C594440660C429E71 /* TEPhotoDisplayView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7986D3A4B3389B5167F3F1A48C44F52A /* TEPhotoDisplayView-dummy.m */; };
+		90594550B0E14ED2E2650A4D3A200312 /* close_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D6921757BE5AF2D90E794602CBF0CFAA /* close_icon@2x.png */; };
+		A3D6FF08160D46B35F3A9CD801648F22 /* camera_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F50560A3FB5683A66A5802496D942478 /* camera_icon@2x.png */; };
 		C21AFFEC20CFD009AB446A4CEFB8043E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
 		CC532B058DCFF4C21812C29E6E9C1914 /* Pods-TEPhotoDisplayView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9148B0D5A12D9EEF9559BFFC9B9EAA18 /* Pods-TEPhotoDisplayView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CFD6119ED607F08ED2571DBA419D0590 /* TEPhotoDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AED81C0B59190DB651F62F4598E5E0 /* TEPhotoDisplayCell.swift */; };
 		D883A4AF4F451B83FF36BF2EFCC292B7 /* Pods-TEPhotoDisplayView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B817CE1E126737AF12F3205309A5219D /* Pods-TEPhotoDisplayView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA6F1870ED599734BDE8B7B74E705320 /* Pods-TEPhotoDisplayView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 678B59A419F20E1799490BEEC0C2BE5F /* Pods-TEPhotoDisplayView_Tests-dummy.m */; };
 /* End PBXBuildFile section */
@@ -51,47 +51,47 @@
 
 /* Begin PBXFileReference section */
 		03CC70647D804831D96AAD8B2FC2807A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F2858BA35DA5049D68E91D367DD8FEE /* camera_icon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "camera_icon@3x.png"; path = "TEPhotoDisplayView/Assets/camera_icon@3x.png"; sourceTree = "<group>"; };
-		2A26D56504C2617EEE5676F83405E6A9 /* TEPhotoDisplayView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TEPhotoDisplayView-umbrella.h"; sourceTree = "<group>"; };
-		34CF864ED1053022DC2E2E0A81C8BAA3 /* TEPhotoDisplayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TEPhotoDisplayView.swift; path = TEPhotoDisplayView/Classes/TEPhotoDisplayView.swift; sourceTree = "<group>"; };
+		09E8FA11FA67ECDD94E927E0DFFC0931 /* TEPhotoDisplayView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; path = TEPhotoDisplayView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0A66FE6AC857812B4AB7EF4320344EEF /* TEPhotoDisplayCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TEPhotoDisplayCell.swift; path = TEPhotoDisplayView/Classes/TEPhotoDisplayCell.swift; sourceTree = "<group>"; };
+		20966DEC92607ECD2D204AF2326233FB /* camera_icon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "camera_icon@3x.png"; path = "TEPhotoDisplayView/Assets/camera_icon@3x.png"; sourceTree = "<group>"; };
+		2B3DBED724E4F4899E45CEEAF4F7D592 /* TEPhotoDisplayView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TEPhotoDisplayView-umbrella.h"; sourceTree = "<group>"; };
+		2C83280E3F4FEE3CB0346C3938A40810 /* TEPhotoDisplayView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TEPhotoDisplayView.xcconfig; sourceTree = "<group>"; };
+		3B6382FC57B6DDBDD96F103BB36BEA32 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3B65B864451DDF1BE5372A1CF824D86D /* Pods-TEPhotoDisplayView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TEPhotoDisplayView_Tests.modulemap"; sourceTree = "<group>"; };
 		3E8362C8C51F22B0F7826DC999F50FBF /* Pods-TEPhotoDisplayView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TEPhotoDisplayView_Example-dummy.m"; sourceTree = "<group>"; };
+		3ED68E4A8C3F3BC61770E0E61AB5F590 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3EDD15A21FD391650A562505B6998490 /* Pods-TEPhotoDisplayView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TEPhotoDisplayView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		48E2A41454836228B4A7FCAE5580502F /* Pods-TEPhotoDisplayView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TEPhotoDisplayView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		4F004520282DDC16B6DF26C0576CDC31 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FE0E5E19870D5DD080BDAE1B48E4D0D /* Pods-TEPhotoDisplayView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TEPhotoDisplayView_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		678B59A419F20E1799490BEEC0C2BE5F /* Pods-TEPhotoDisplayView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-TEPhotoDisplayView_Tests-dummy.m"; sourceTree = "<group>"; };
-		6A1738C9B76D995FED5B5D559653C429 /* TEPhotoDisplayView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = TEPhotoDisplayView.bundle; path = "TEPhotoDisplayView-TEPhotoDisplayView.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A1738C9B76D995FED5B5D559653C429 /* TEPhotoDisplayView.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TEPhotoDisplayView.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A250B797CF49DCDF1E378078E5BB328 /* Pods-TEPhotoDisplayView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TEPhotoDisplayView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6AE9C4DCB0F12D09C31F64BE2F0F8F05 /* close_icon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "close_icon@3x.png"; path = "TEPhotoDisplayView/Assets/close_icon@3x.png"; sourceTree = "<group>"; };
-		6D86A3FE54045B34C8776A3A7EC53C06 /* TEPhotoDisplayView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TEPhotoDisplayView.xcconfig; sourceTree = "<group>"; };
 		714123A92435AD8DCA15F65BA5D691BE /* Pods-TEPhotoDisplayView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-TEPhotoDisplayView_Example.modulemap"; sourceTree = "<group>"; };
-		7172A72524B3DF679429488D109398F6 /* Pods_TEPhotoDisplayView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TEPhotoDisplayView_Tests.framework; path = "Pods-TEPhotoDisplayView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7986D3A4B3389B5167F3F1A48C44F52A /* TEPhotoDisplayView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TEPhotoDisplayView-dummy.m"; sourceTree = "<group>"; };
+		7172A72524B3DF679429488D109398F6 /* Pods_TEPhotoDisplayView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TEPhotoDisplayView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		861459A073A2DE343864DFFD59C70CC5 /* Pods-TEPhotoDisplayView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TEPhotoDisplayView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		8C0FA3496888C7E3AAF536AF299FA0AF /* TEPhotoDisplayView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TEPhotoDisplayView.framework; path = TEPhotoDisplayView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8FCDEDEB846ED11A6DE0068D5E198C3A /* TEPhotoDisplayView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = TEPhotoDisplayView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		8C0FA3496888C7E3AAF536AF299FA0AF /* TEPhotoDisplayView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TEPhotoDisplayView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9148B0D5A12D9EEF9559BFFC9B9EAA18 /* Pods-TEPhotoDisplayView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TEPhotoDisplayView_Example-umbrella.h"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F83EC040666618DCD0BF6CEC6812E8F /* camera_icon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "camera_icon@2x.png"; path = "TEPhotoDisplayView/Assets/camera_icon@2x.png"; sourceTree = "<group>"; };
-		A06867E47A30DB69856A1DC91D5D47B0 /* ResourceBundle-TEPhotoDisplayView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TEPhotoDisplayView-Info.plist"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A336BDD4530435CACD40BEA683F7C7B5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8CF64FA06C92BE84B86145B03159FDA /* Pods-TEPhotoDisplayView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TEPhotoDisplayView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		AE0D293F36E4C98438193435AC456ED5 /* Pods-TEPhotoDisplayView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TEPhotoDisplayView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		B476E9A1E067FF052B72530F60B74D72 /* Pods_TEPhotoDisplayView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TEPhotoDisplayView_Example.framework; path = "Pods-TEPhotoDisplayView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B476E9A1E067FF052B72530F60B74D72 /* Pods_TEPhotoDisplayView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TEPhotoDisplayView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B817CE1E126737AF12F3205309A5219D /* Pods-TEPhotoDisplayView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TEPhotoDisplayView_Tests-umbrella.h"; sourceTree = "<group>"; };
-		C2C2CB09E4CC7A4798CD6CDD8849DDAE /* close_icon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "close_icon@2x.png"; path = "TEPhotoDisplayView/Assets/close_icon@2x.png"; sourceTree = "<group>"; };
-		C4445A3EF23F90B572AB256883EB3B6F /* TEPhotoDisplayView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TEPhotoDisplayView-prefix.pch"; sourceTree = "<group>"; };
+		B9CF142D0BF376A4B36B0304C4008939 /* ResourceBundle-TEPhotoDisplayView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-TEPhotoDisplayView-Info.plist"; sourceTree = "<group>"; };
+		C26101F02D784A083AC6D8FAB52155C2 /* TEPhotoDisplayView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TEPhotoDisplayView-dummy.m"; sourceTree = "<group>"; };
 		C564C2B793D9EC1E733D29AD92E4C5E8 /* Pods-TEPhotoDisplayView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TEPhotoDisplayView_Example-resources.sh"; sourceTree = "<group>"; };
-		CFB7C519EC06500070715D0FD6098EC0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		D6081348D4C94D5F59D5885A74C6DB9D /* TEPhotoDisplayView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TEPhotoDisplayView.modulemap; sourceTree = "<group>"; };
+		CADD7E1975826D6CAB1558CF32B12703 /* close_icon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "close_icon@3x.png"; path = "TEPhotoDisplayView/Assets/close_icon@3x.png"; sourceTree = "<group>"; };
+		D0EB023966BB42C8CBD31E0685385E88 /* TEPhotoDisplayView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TEPhotoDisplayView-prefix.pch"; sourceTree = "<group>"; };
 		D673A9D0CC4CA860F4B758FAB774324A /* Pods-TEPhotoDisplayView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TEPhotoDisplayView_Tests-resources.sh"; sourceTree = "<group>"; };
+		D6921757BE5AF2D90E794602CBF0CFAA /* close_icon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "close_icon@2x.png"; path = "TEPhotoDisplayView/Assets/close_icon@2x.png"; sourceTree = "<group>"; };
 		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		DF434CD6EFF47B255ABA3601AD551C4B /* TEPhotoDisplayView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TEPhotoDisplayView.modulemap; sourceTree = "<group>"; };
 		E27E05AE7BD9695355764F16C5D0C330 /* Pods-TEPhotoDisplayView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TEPhotoDisplayView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		EB99D65700055BA456C4EE7F5BAFD6E4 /* Pods-TEPhotoDisplayView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TEPhotoDisplayView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		ED66B19900305958BC9BAE8E267D5480 /* TEPhotoDisplayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TEPhotoDisplayView.swift; path = TEPhotoDisplayView/Classes/TEPhotoDisplayView.swift; sourceTree = "<group>"; };
 		EEFBF8E1CCE8E24FFA82008775F5872C /* Pods-TEPhotoDisplayView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-TEPhotoDisplayView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		F6AED81C0B59190DB651F62F4598E5E0 /* TEPhotoDisplayCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TEPhotoDisplayCell.swift; path = TEPhotoDisplayView/Classes/TEPhotoDisplayCell.swift; sourceTree = "<group>"; };
-		FEBB16581EC2CC76C07AE054E1227949 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		EF34566ED37361EA8F7ADF13ACDC39DE /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F50560A3FB5683A66A5802496D942478 /* camera_icon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "camera_icon@2x.png"; path = "TEPhotoDisplayView/Assets/camera_icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +129,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		003F8CD6CA4655EA19062FD6F6CDFB54 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				3B6382FC57B6DDBDD96F103BB36BEA32 /* LICENSE */,
+				EF34566ED37361EA8F7ADF13ACDC39DE /* README.md */,
+				09E8FA11FA67ECDD94E927E0DFFC0931 /* TEPhotoDisplayView.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
 		03047F3C242B03934C54FEB5B45E0BC7 /* Pods-TEPhotoDisplayView_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,19 +155,6 @@
 			);
 			name = "Pods-TEPhotoDisplayView_Example";
 			path = "Target Support Files/Pods-TEPhotoDisplayView_Example";
-			sourceTree = "<group>";
-		};
-		1D35EB832B89E62C77B9E82A36C1F48A /* TEPhotoDisplayView */ = {
-			isa = PBXGroup;
-			children = (
-				F6AED81C0B59190DB651F62F4598E5E0 /* TEPhotoDisplayCell.swift */,
-				34CF864ED1053022DC2E2E0A81C8BAA3 /* TEPhotoDisplayView.swift */,
-				4C91B4D2461816C3BE1A50154256F279 /* Pod */,
-				55A2850F08C71D6E82B0FEDD393A0B45 /* Resources */,
-				F7C4D3157A59494D650ACD3E52090E43 /* Support Files */,
-			);
-			name = TEPhotoDisplayView;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		42E49FF04C94E17F3C6623779205A2BA /* Pods-TEPhotoDisplayView_Tests */ = {
@@ -186,44 +183,43 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		4C91B4D2461816C3BE1A50154256F279 /* Pod */ = {
+		599C822073FD6AF0D49E9E53E326B28E /* TEPhotoDisplayView */ = {
 			isa = PBXGroup;
 			children = (
-				FEBB16581EC2CC76C07AE054E1227949 /* LICENSE */,
-				CFB7C519EC06500070715D0FD6098EC0 /* README.md */,
-				8FCDEDEB846ED11A6DE0068D5E198C3A /* TEPhotoDisplayView.podspec */,
+				0A66FE6AC857812B4AB7EF4320344EEF /* TEPhotoDisplayCell.swift */,
+				ED66B19900305958BC9BAE8E267D5480 /* TEPhotoDisplayView.swift */,
+				003F8CD6CA4655EA19062FD6F6CDFB54 /* Pod */,
+				C07CB752DD97BAB183EC17D343C5F8A0 /* Resources */,
+				B9DD0F0A59F3313C54A246AC835B6961 /* Support Files */,
 			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		55A2850F08C71D6E82B0FEDD393A0B45 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				9F83EC040666618DCD0BF6CEC6812E8F /* camera_icon@2x.png */,
-				0F2858BA35DA5049D68E91D367DD8FEE /* camera_icon@3x.png */,
-				C2C2CB09E4CC7A4798CD6CDD8849DDAE /* close_icon@2x.png */,
-				6AE9C4DCB0F12D09C31F64BE2F0F8F05 /* close_icon@3x.png */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		5F104286687D97FF735841B928ACCFB2 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1D35EB832B89E62C77B9E82A36C1F48A /* TEPhotoDisplayView */,
-			);
-			name = "Development Pods";
+			name = TEPhotoDisplayView;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				5F104286687D97FF735841B928ACCFB2 /* Development Pods */,
+				EFEA91E946F47705480FB96E3912CC04 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				BF8E40E254803B56B59B80A254865E52 /* Products */,
 				CEE3D5D87B9E6EC2FAFEF3872660FB2A /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		B9DD0F0A59F3313C54A246AC835B6961 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3ED68E4A8C3F3BC61770E0E61AB5F590 /* Info.plist */,
+				B9CF142D0BF376A4B36B0304C4008939 /* ResourceBundle-TEPhotoDisplayView-Info.plist */,
+				DF434CD6EFF47B255ABA3601AD551C4B /* TEPhotoDisplayView.modulemap */,
+				2C83280E3F4FEE3CB0346C3938A40810 /* TEPhotoDisplayView.xcconfig */,
+				C26101F02D784A083AC6D8FAB52155C2 /* TEPhotoDisplayView-dummy.m */,
+				D0EB023966BB42C8CBD31E0685385E88 /* TEPhotoDisplayView-prefix.pch */,
+				2B3DBED724E4F4899E45CEEAF4F7D592 /* TEPhotoDisplayView-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/TEPhotoDisplayView";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -245,6 +241,17 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C07CB752DD97BAB183EC17D343C5F8A0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F50560A3FB5683A66A5802496D942478 /* camera_icon@2x.png */,
+				20966DEC92607ECD2D204AF2326233FB /* camera_icon@3x.png */,
+				D6921757BE5AF2D90E794602CBF0CFAA /* close_icon@2x.png */,
+				CADD7E1975826D6CAB1558CF32B12703 /* close_icon@3x.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		CEE3D5D87B9E6EC2FAFEF3872660FB2A /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,19 +261,12 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		F7C4D3157A59494D650ACD3E52090E43 /* Support Files */ = {
+		EFEA91E946F47705480FB96E3912CC04 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4F004520282DDC16B6DF26C0576CDC31 /* Info.plist */,
-				A06867E47A30DB69856A1DC91D5D47B0 /* ResourceBundle-TEPhotoDisplayView-Info.plist */,
-				D6081348D4C94D5F59D5885A74C6DB9D /* TEPhotoDisplayView.modulemap */,
-				6D86A3FE54045B34C8776A3A7EC53C06 /* TEPhotoDisplayView.xcconfig */,
-				7986D3A4B3389B5167F3F1A48C44F52A /* TEPhotoDisplayView-dummy.m */,
-				C4445A3EF23F90B572AB256883EB3B6F /* TEPhotoDisplayView-prefix.pch */,
-				2A26D56504C2617EEE5676F83405E6A9 /* TEPhotoDisplayView-umbrella.h */,
+				599C822073FD6AF0D49E9E53E326B28E /* TEPhotoDisplayView */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/TEPhotoDisplayView";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,7 +323,7 @@
 			buildConfigurationList = 29EE40C213D5012D924F52AA2C0483AF /* Build configuration list for PBXNativeTarget "TEPhotoDisplayView" */;
 			buildPhases = (
 				66ABCFAF78E7189CCD8DDD90B1EF28EF /* Headers */,
-				62389B4FA84CBB16EF3B5365D9FDC79A /* Sources */,
+				EFC5F3A36768E478B6A0870A81FF80EF /* Sources */,
 				572AE91E033F3E153E9E38ADDD65EAEE /* Frameworks */,
 				6CFD6CAC97FF3FCE112EF5474A042990 /* Resources */,
 			);
@@ -447,21 +447,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		62389B4FA84CBB16EF3B5365D9FDC79A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CFD6119ED607F08ED2571DBA419D0590 /* TEPhotoDisplayCell.swift in Sources */,
-				BB8BDE7227077A0C594440660C429E71 /* TEPhotoDisplayView-dummy.m in Sources */,
-				2ECB7196CDE7924308605229811CA7B0 /* TEPhotoDisplayView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A31F3D9CFA095FA8ED7253500649AE38 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8CD99C3F1C7EC14E5E5C2402156C9F0B /* Pods-TEPhotoDisplayView_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EFC5F3A36768E478B6A0870A81FF80EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FD0885CE2181F8458CA8356A642EFAD /* TEPhotoDisplayCell.swift in Sources */,
+				1115001CC4948CBD4DA556E798603A17 /* TEPhotoDisplayView-dummy.m in Sources */,
+				4671116FEDC2191A065822E5B9F987EC /* TEPhotoDisplayView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,7 +498,7 @@
 /* Begin XCBuildConfiguration section */
 		034157770ED1A19B909669F3DB307C44 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D86A3FE54045B34C8776A3A7EC53C06 /* TEPhotoDisplayView.xcconfig */;
+			baseConfigurationReference = 2C83280E3F4FEE3CB0346C3938A40810 /* TEPhotoDisplayView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TEPhotoDisplayView";
@@ -547,7 +547,7 @@
 		};
 		31C96E4AA648545EAE8EE34B1D469914 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D86A3FE54045B34C8776A3A7EC53C06 /* TEPhotoDisplayView.xcconfig */;
+			baseConfigurationReference = 2C83280E3F4FEE3CB0346C3938A40810 /* TEPhotoDisplayView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -732,8 +732,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -808,7 +807,7 @@
 		};
 		D111739B01248F3C6B1958160FC63B76 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D86A3FE54045B34C8776A3A7EC53C06 /* TEPhotoDisplayView.xcconfig */;
+			baseConfigurationReference = 2C83280E3F4FEE3CB0346C3938A40810 /* TEPhotoDisplayView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -839,7 +838,7 @@
 		};
 		EB0F321BE1F4DB8BC268395B8D1EBEAF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D86A3FE54045B34C8776A3A7EC53C06 /* TEPhotoDisplayView.xcconfig */;
+			baseConfigurationReference = 2C83280E3F4FEE3CB0346C3938A40810 /* TEPhotoDisplayView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/TEPhotoDisplayView";
