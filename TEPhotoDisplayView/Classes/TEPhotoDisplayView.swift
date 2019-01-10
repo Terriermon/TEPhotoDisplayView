@@ -57,6 +57,12 @@ open class TEPhotoDisplayView: UIView {
     
     open var onlyShow = false
     
+    open override var backgroundColor: UIColor? {
+        didSet {
+            collectionView.backgroundColor = backgroundColor
+        }
+    }
+    
     public weak var delegate: TEPhotoDisplayViewDelegate?
     
     /**
@@ -67,6 +73,7 @@ open class TEPhotoDisplayView: UIView {
     
     private lazy var  collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
+        collectionView.backgroundColor = .white
         collectionView.register(TEPhotoDisplayCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.delegate = self
         collectionView.dataSource = self

@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         displayView = TEPhotoDisplayView()
+        displayView?.backgroundColor = .lightGray
         displayView?.delegate = self
         view.addSubview(displayView!)
         displayView?.translatesAutoresizingMaskIntoConstraints = false
