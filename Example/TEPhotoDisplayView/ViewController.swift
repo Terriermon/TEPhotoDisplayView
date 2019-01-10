@@ -24,7 +24,8 @@ class ViewController: UIViewController {
             displayView!.leftAnchor.constraint(equalTo: view.leftAnchor),
             displayView!.rightAnchor.constraint(equalTo: view.rightAnchor),
 //            displayView!.topAnchor.constraint(equalTo: view.topAnchor),
-            displayView!.topAnchor.constraint(equalTo: view.topAnchor, constant: 40)
+            displayView!.topAnchor.constraint(equalTo: view.topAnchor, constant: 40),
+            displayView!.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor)
 //            displayView!.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ]
         NSLayoutConstraint.activate(displayConstrains)

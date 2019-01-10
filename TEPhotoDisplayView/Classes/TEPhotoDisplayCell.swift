@@ -14,7 +14,11 @@ class TEPhotoDisplayCell: UICollectionViewCell {
     
     private var image: ImageClosure?
     
-    let imageView = UIImageView()
+    let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
     
     lazy var deleteButton: UIButton = {
         let button = UIButton(type: .custom)
