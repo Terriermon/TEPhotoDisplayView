@@ -41,7 +41,7 @@ open class TEPhotoDisplayView: UIView {
                 }
             }
             
-            self.invalidateIntrinsicContentSize()
+//            self.invalidateIntrinsicContentSize()
             collectionView.reloadData()
         }
     }
@@ -63,6 +63,10 @@ open class TEPhotoDisplayView: UIView {
      若添加图片的组件，可以一次添加多张，需要在图片组件内设置
      */
     public var maxCount: Int = Int.max
+    
+    public var viewDidLayout:((_ view: TEPhotoDisplayView) -> Void)?
+    
+    private var observer: NSKeyValueObservation?
     
     private lazy var  collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -87,10 +91,19 @@ open class TEPhotoDisplayView: UIView {
         self.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.setNeedsUpdateConstraints()
+        self.observer = collectionView.observe(\UICollectionView.contentSize, changeHandler: { (cv, changed) in
+            if self.frame.size != cv.contentSize {
+                self.setNeedsLayout()
+            }
+        })
     }
     
     override open func layoutSubviews() {
         super.layoutSubviews()
+        if self.bounds.size != self.collectionView.contentSize {
+            self.invalidateIntrinsicContentSize()
+        }
+        viewDidLayout?(self)
     }
     
     override open func updateConstraints() {
@@ -106,6 +119,7 @@ open class TEPhotoDisplayView: UIView {
     }
     
     open override var intrinsicContentSize: CGSize {
+        /*
 //        let length = (self.bounds.width - CGFloat(Default.col + 1) * Default.margin) / CGFloat(Default.col)
 //        let length = (UIScreen.main.bounds.width - CGFloat(Default.col + 1) * Default.margin) / CGFloat(Default.col)
         //FIXME: - 这里有bug，宽度默认是屏幕宽度，需要找一个方法，实现这里的宽度为视图布局完成后的宽度
@@ -124,6 +138,8 @@ open class TEPhotoDisplayView: UIView {
             height = (length) * CGFloat(((photos.count + 1) / Default.col) + (addOneRow ? 1:0)) +  Default.margin
         }
         return CGSize(width: UIView.noIntrinsicMetric, height: height)
+ */
+        return self.collectionView.contentSize
     }
 }
 
@@ -190,7 +206,7 @@ extension TEPhotoDisplayView: UICollectionViewDelegateFlowLayout {
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: Default.margin, left: Default.margin, bottom: 0, right: Default.margin)
+        return UIEdgeInsets(top: Default.margin, left: Default.margin, bottom: Default.margin, right: Default.margin)
     }
 }
 

@@ -39,6 +39,9 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! PhotoTableViewCell
+        cell.displayView?.viewDidLayout = {(view) in
+            self.tableView.reloadData()
+        }
         cell.photos = self.photos
         cell.addPhoto = {
             self.uploadImages()

@@ -29,7 +29,6 @@ class TEPhotoDisplayCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        contentView.backgroundColor = .red
         contentView.addSubview(imageView)
         contentView.addSubview(deleteButton)
         
