@@ -32,6 +32,11 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>使用相册</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

@@ -28,6 +28,7 @@ extension TEPhotoDisplayViewDelegate {
 }
 
 public protocol TEPhotoDisplayViewDataSource: class {
+    /// 支持 UIImage、URL、String 三种形式
     func images(in photoDisplayView: TEPhotoDisplayView) -> [Any]
 }
 
@@ -166,6 +167,7 @@ extension TEPhotoDisplayView: UICollectionViewDataSource {
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! TEPhotoDisplayCell
+        
         if indexPath.row == self.photos.count, indexPath.row < maxCount, !onlyShow {
             cell.deleteButton.isHidden = true
             cell.imageView.image = self.cameraImage
@@ -173,11 +175,13 @@ extension TEPhotoDisplayView: UICollectionViewDataSource {
             cell.deleteButton.isHidden = onlyShow
 
             let photo = photos[indexPath.row]
+            
             if photo is UIImage {
                 cell.imageView.image = photo as? UIImage
-            }
-            if photo is URL {
+            } else if photo is URL {
                 cell.imageView.kf.setImage(with: photo as!URL, placeholder: self.placeholderImage)
+            } else if photo is String, let url = URL(string: photo as!String) {
+                    cell.imageView.kf.setImage(with: url, placeholder: self.placeholderImage)
             }
             
             cell.delete { [unowned self] image in

@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         self.photos.append(contentsOf: self.urls.map {
             URL(string: $0)!
         })
+        self.photos.append(contentsOf: self.urls)
     }
 
     override func didReceiveMemoryWarning() {
