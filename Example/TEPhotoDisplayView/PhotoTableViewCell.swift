@@ -12,9 +12,9 @@ import TEPhotoDisplayView
 class PhotoTableViewCell: UITableViewCell {
     
     var displayView: TEPhotoDisplayView?
-    var photos = [UIImage]() {
+    var photos = [Any]() {
         didSet {
-            displayView?.photos = photos
+            displayView?.reloadData()
         }
     }
     
@@ -27,6 +27,7 @@ class PhotoTableViewCell: UITableViewCell {
         displayView = TEPhotoDisplayView()
         displayView?.backgroundColor = .lightGray
         displayView?.delegate = self
+        displayView?.dataSource = self
         contentView.addSubview(displayView!)
         displayView?.translatesAutoresizingMaskIntoConstraints = false
         
@@ -65,5 +66,11 @@ extension PhotoTableViewCell: TEPhotoDisplayViewDelegate {
     /// 添加的图片超过设置的最大图片数量
     func photoDisplayViewPhotosCountAboveMaxCount(_ photoDisplayView: TEPhotoDisplayView) {
         print(self.photos)
+    }
+}
+
+extension PhotoTableViewCell: TEPhotoDisplayViewDataSource {
+    func images(in photoDisplayView: TEPhotoDisplayView) -> [Any] {
+        return self.photos
     }
 }

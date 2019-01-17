@@ -1,15 +1,22 @@
 PODS:
-  - TEPhotoDisplayView (0.0.1)
+  - Kingfisher (4.10.1)
+  - TEPhotoDisplayView (0.0.2):
+    - Kingfisher
 
 DEPENDENCIES:
   - TEPhotoDisplayView (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Kingfisher
 
 EXTERNAL SOURCES:
   TEPhotoDisplayView:
     :path: "../"
 
 SPEC CHECKSUMS:
-  TEPhotoDisplayView: 60c4d27bec55705dce54a938621dd928889efb08
+  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  TEPhotoDisplayView: 2ff92dc84fb51ffe814846d3f8aec8bceddcc4cb
 
 PODFILE CHECKSUM: c92c3a2a53d279e5449ab40a6f6456854251a774
 
