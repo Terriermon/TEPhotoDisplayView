@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 public protocol TEPhotoDisplayViewDelegate: class {
     /// 选中某张图片
@@ -26,13 +27,13 @@ extension TEPhotoDisplayViewDelegate {
     func photoDisplayViewPhotosCountAboveMaxCount(_ photoDisplayView: TEPhotoDisplayView) {}
 }
 
-//protocol TEPhotoDisplayViewDataSource: class {
-//
-//}
+public protocol TEPhotoDisplayViewDataSource: class {
+    func images(in photoDisplayView: TEPhotoDisplayView) -> [Any]
+}
 
-open class TEPhotoDisplayView: UIView {
+@IBDesignable open class TEPhotoDisplayView: UIView {
     
-    open var photos = [UIImage?]() {
+    private var photos = [Any]() {
         didSet {
             if photos.count > maxCount {
                 photos = photos.prefix(maxCount).map { $0 }
@@ -46,23 +47,23 @@ open class TEPhotoDisplayView: UIView {
         }
     }
     
-    open var onlyShow = false
+    @IBInspectable open var onlyShow = false
     
-    open var placeholderImage: UIImage?
+    @IBInspectable open var placeholderImage: UIImage?
     
-    open override var backgroundColor: UIColor? {
+    @IBInspectable open override var backgroundColor: UIColor? {
         didSet {
             collectionView.backgroundColor = backgroundColor
         }
     }
     
     public weak var delegate: TEPhotoDisplayViewDelegate?
-    
+    public weak var dataSource: TEPhotoDisplayViewDataSource?
     /**
      该View只是图片展示的UI，设置最大数量只能控制显示的数量，并不能控制数据数组中的数量，
      若添加图片的组件，可以一次添加多张，需要在图片组件内设置
      */
-    public var maxCount: Int = Int.max
+    @IBInspectable public var maxCount: Int = Int.max
     
     public var viewDidLayout:((_ view: TEPhotoDisplayView) -> Void)?
     
@@ -141,6 +142,11 @@ open class TEPhotoDisplayView: UIView {
  */
         return self.collectionView.contentSize
     }
+    
+    open func reloadData() {
+        guard let dataSource = self.dataSource else { return }
+        self.photos = dataSource.images(in: self)
+    }
 }
 
 extension TEPhotoDisplayView: UICollectionViewDataSource {
@@ -165,7 +171,14 @@ extension TEPhotoDisplayView: UICollectionViewDataSource {
             cell.imageView.image = self.cameraImage
         } else {
             cell.deleteButton.isHidden = onlyShow
-            cell.imageView.image = photos[indexPath.row] ?? self.placeholderImage
+
+            let photo = photos[indexPath.row]
+            if photo is UIImage {
+                cell.imageView.image = photo as? UIImage
+            }
+            if photo is URL {
+                cell.imageView.kf.setImage(with: photo as!URL, placeholder: self.placeholderImage)
+            }
             
             cell.delete { [unowned self] image in
 //                self.photos.remove(at: indexPath.row)
