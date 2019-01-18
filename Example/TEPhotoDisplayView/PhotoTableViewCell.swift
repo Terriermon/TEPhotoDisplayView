@@ -11,10 +11,22 @@ import TEPhotoDisplayView
 
 class PhotoTableViewCell: UITableViewCell {
     
-    var displayView: TEPhotoDisplayView?
+    /**
+    把displayView 设置成懒加载会导致循环引用
+     **/
+    
+    lazy var displayView: TEPhotoDisplayView = {
+        let displayView = TEPhotoDisplayView()
+        displayView.backgroundColor = .lightGray
+        displayView.delegate = self
+        displayView.dataSource = self
+        
+        return displayView
+    }()
+    
     var photos = [Any]() {
         didSet {
-            displayView?.reloadData()
+            displayView.reloadData()
         }
     }
     
@@ -23,19 +35,15 @@ class PhotoTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
-        displayView = TEPhotoDisplayView()
-        displayView?.backgroundColor = .lightGray
-        displayView?.delegate = self
-        displayView?.dataSource = self
-        contentView.addSubview(displayView!)
-        displayView?.translatesAutoresizingMaskIntoConstraints = false
-        
+
+        contentView.addSubview(displayView)
+      
+        displayView.translatesAutoresizingMaskIntoConstraints = false
         let displayConstrains = [
-            displayView!.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 40),
-            displayView!.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -40),
-            displayView!.topAnchor.constraint(equalTo: contentView.topAnchor),
-            displayView!.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            displayView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 40),
+            displayView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -40),
+            displayView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            displayView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
             //            displayView!.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ]
         NSLayoutConstraint.activate(displayConstrains)

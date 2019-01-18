@@ -71,7 +71,7 @@ public protocol TEPhotoDisplayViewDataSource: class {
     private var observer: NSKeyValueObservation?
     
     private lazy var  collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectikonViewFlowLayout())
         collectionView.backgroundColor = .white
         collectionView.register(TEPhotoDisplayCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.delegate = self
@@ -104,8 +104,8 @@ public protocol TEPhotoDisplayViewDataSource: class {
         super.layoutSubviews()
         if self.bounds.size != self.collectionView.contentSize {
             self.invalidateIntrinsicContentSize()
+            viewDidLayout?(self)
         }
-        viewDidLayout?(self)
     }
     
     override open func updateConstraints() {
@@ -181,7 +181,7 @@ extension TEPhotoDisplayView: UICollectionViewDataSource {
             } else if photo is URL {
                 cell.imageView.kf.setImage(with: photo as!URL, placeholder: self.placeholderImage)
             } else if photo is String, let url = URL(string: photo as!String) {
-                    cell.imageView.kf.setImage(with: url, placeholder: self.placeholderImage)
+                cell.imageView.kf.setImage(with: url, placeholder: self.placeholderImage)
             }
             
             cell.delete { [unowned self] image in
