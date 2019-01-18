@@ -71,7 +71,7 @@ public protocol TEPhotoDisplayViewDataSource: class {
     private var observer: NSKeyValueObservation?
     
     private lazy var  collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectikonViewFlowLayout())
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
         collectionView.backgroundColor = .white
         collectionView.register(TEPhotoDisplayCell.self, forCellWithReuseIdentifier: "cell")
         collectionView.delegate = self
